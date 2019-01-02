@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
+import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Logo from '../../assets/image/linkedin.png';
 import Navbar from '../../styles/navbar.css'
@@ -52,24 +53,6 @@ const styles = theme => ({
       right: '0',
     },
   },
-  sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-    },
-  },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
-  notchedOutline: {},
-  bootstrapRoot: {
-    'label + &': {
-      marginTop: theme.spacing.unit * 3,
-    },
-  },
   margin: {
     margin: theme.spacing.unit,
   },
@@ -102,47 +85,48 @@ class Linkedin extends React.Component {
     
     return (
       <div className={classes.root}>
-        <AppBar position="static" color="primary" className={classes.navbar}>
-          <Toolbar>
-            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              <img src={Logo} />
-            </Typography>
-              <FormControl className={classes.margin}>
-                <InputBase
-                  id="bootstrap-input"
-                  type="Email"
-                  placeholder="Email"
-                  classes={{
-                  root: classes.bootstrapRoot,
-                  input: classes.bootstrapInput,
-                  }}
-                />
-              </FormControl>
-              <FormControl className={classes.margin}>
+          <AppBar position="static" color="primary" className={classes.navbar}>
+            <Toolbar>
+              <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+                <img src={Logo} />
+              </Typography>
+              <Grid item xs={12} sm={6}>
+                <FormControl className={classes.margin}>
                   <InputBase
                     id="bootstrap-input"
-                    type="password"
-                    placeholder="Password"
+                    type="Email"
+                    placeholder="Email"
                     classes={{
                     root: classes.bootstrapRoot,
                     input: classes.bootstrapInput,
                     }}
                   />
-              </FormControl>
-              <Button variant="outlined" className={classes.button}>
-                Sign in
-              </Button>
-              <Typography className={classes.subheading} variant="subheading" noWrap>
-                  Forgot Password?
-              </Typography>
-              
-              <div className={classes.grow} />
-                  <div className={classes.sectionDesktop}>    
-                      <div className={classes.sectionMobile}></div>
-                </div>
-            
-          </Toolbar>
-        </AppBar>
+                </FormControl>
+                <FormControl className={classes.margin}>
+                    <InputBase
+                      id="bootstrap-input"
+                      type="password"
+                      placeholder="Password"
+                      classes={{
+                      root: classes.bootstrapRoot,
+                      input: classes.bootstrapInput,
+                      }}
+                    />
+                </FormControl>
+                <Button variant="outlined" className={classes.button}>
+                  Sign in
+                </Button>
+                <Typography className={classes.subheading} variant="subheading" noWrap>
+                    Forgot Password?
+                </Typography>
+                
+                <div className={classes.grow} />
+                    <div className={classes.sectionDesktop}>    
+                        <div className={classes.sectionMobile}></div>
+                  </div>
+              </Grid>
+            </Toolbar>
+          </AppBar>
       </div>
     );
   }
