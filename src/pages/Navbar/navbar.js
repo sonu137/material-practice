@@ -2,62 +2,54 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
-
+import FormControl from '@material-ui/core/FormControl';
+import Button from '@material-ui/core/Button';
+import Logo from '../../assets/image/linkedin.png';
+import Navbar from '../../styles/navbar.css'
 const styles = theme => ({
-  root: {
-    width: '100%',
+  navbar : {
+    backgroundColor: '#283e4a',
+    position: 'fixed',
+    marginLeft:'auto',
+    marginRight:'auto',
+    width:'100%',
   },
-  grow: {
-    flexGrow: 1,
+  button: {
+    margin: theme.spacing.unit,
+    padding: '6px 20px',
+    color: '#fff',
+    borderColor: 'white !important',
+    fontSize: '12px',
+
+      '&:hover' : {
+        backgroundColor: 'white',
+        color: 'black',
+      },
   },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
+  subheading:{
+    margin: theme.spacing.unit,
+    color: '#cdcfd2',
+    fontSize: '13.5px',
+    cursor: 'pointer',  
+
+      '&:hover' : {
+      textdecoration: 'underline',
+      color: 'white',
+    },
+  },
+  input: {
+    display: 'none',
   },
   title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.yellow, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.yellow, 0.25),
-    },
-    marginRight: theme.spacing.unit * 2,
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing.unit * 3,
-      width: 'auto',
-    },
-  },
-  
-  inputInput: {
-    paddingTop: theme.spacing.unit,
-    paddingRight: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit,
-    paddingLeft: theme.spacing.unit * 2,
-    transition: theme.transitions.create('width'),
-    width: '100%',
+    display: 'flex',
+    marginLeft: '20rem',
+    marginRight: '20rem',
     [theme.breakpoints.up('md')]: {
-      width: 200,
+      left: '0',
+      right: '0',
     },
   },
   sectionDesktop: {
@@ -72,67 +64,92 @@ const styles = theme => ({
       display: 'none',
     },
   },
+  notchedOutline: {},
+  bootstrapRoot: {
+    'label + &': {
+      marginTop: theme.spacing.unit * 3,
+    },
+  },
+  margin: {
+    margin: theme.spacing.unit,
+  },
+  bootstrapInput: {
+    display:'flex',
+    borderRadius: 2,
+    backgroundColor: theme.palette.common.white,
+    border: '1px solid #ced4da',
+    fontSize: 12,
+    padding: '8px 10px',
+    transition: theme.transitions.create(['border-color', 'box-shadow']),
+    '&:focus': {
+      borderColor: '#80bdff',
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
+    },
+  },
+  bootstrapFormLabel: {
+    fontSize: 15,
+  },
 });
 
-class PrimarySearchAppBar extends React.Component {
+class Linkedin extends React.Component {
   state = {
     anchorEl: null,
     mobileMoreAnchorEl: null,
   };
 
-  handleProfileMenuOpen = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-
-  handleMenuClose = () => {
-    this.setState({ anchorEl: null });
-    this.handleMobileMenuClose();
-  };
-
-  handleMobileMenuOpen = event => {
-    this.setState({ mobileMoreAnchorEl: event.currentTarget });
-  };
-
-  handleMobileMenuClose = () => {
-    this.setState({ mobileMoreAnchorEl: null });
-  };
-
   render() {
-    const { anchorEl, mobileMoreAnchorEl } = this.state;
     const { classes } = this.props;
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
+    
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" color="primary" className={classes.navbar}>
           <Toolbar>
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              Linked-In
+              <img src={Logo} />
             </Typography>
-            <div className={classes.search}>
-              <InputBase
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-              />
-            </div>
-            <div className={classes.grow} />
-                <div className={classes.sectionDesktop}>    
-                    <div className={classes.sectionMobile}>
-                        
-                    </div>
+              <FormControl className={classes.margin}>
+                <InputBase
+                  id="bootstrap-input"
+                  type="Email"
+                  placeholder="Email"
+                  classes={{
+                  root: classes.bootstrapRoot,
+                  input: classes.bootstrapInput,
+                  }}
+                />
+              </FormControl>
+              <FormControl className={classes.margin}>
+                  <InputBase
+                    id="bootstrap-input"
+                    type="password"
+                    placeholder="Password"
+                    classes={{
+                    root: classes.bootstrapRoot,
+                    input: classes.bootstrapInput,
+                    }}
+                  />
+              </FormControl>
+              <Button variant="outlined" className={classes.button}>
+                Sign in
+              </Button>
+              <Typography className={classes.subheading} variant="subheading" noWrap>
+                  Forgot Password?
+              </Typography>
+              
+              <div className={classes.grow} />
+                  <div className={classes.sectionDesktop}>    
+                      <div className={classes.sectionMobile}></div>
                 </div>
-            </Toolbar>
-            </AppBar>
+            
+          </Toolbar>
+        </AppBar>
       </div>
     );
   }
 }
 
-PrimarySearchAppBar.propTypes = {
+Linkedin.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(PrimarySearchAppBar);
+export default withStyles(styles)(Linkedin);
