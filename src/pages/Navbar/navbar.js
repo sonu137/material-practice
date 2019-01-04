@@ -9,22 +9,28 @@ import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Logo from '../../assets/image/linkedin.png';
-import Navbar from '../../styles/navbar.css'
+import Navbar from '../../styles/navbar.scss';
+import Main from '../main-page/backdrop-image';
 const styles = theme => ({
   navbar : {
     backgroundColor: '#283e4a',
     position: 'fixed',
-    marginLeft:'auto',
-    marginRight:'auto',
-    width:'100%',
+    minWidth:'1096px',
+
+    [theme.breakpoints.up('xs')]: {
+      width:'100%',
+    },
+    [theme.breakpoints.up('sm')]: {
+      width:'100%',
+      minWidth:'1096px',
+    },
   },
   button: {
-    margin: theme.spacing.unit,
-    padding: '6px 20px',
+    padding: '6px 15px',
     color: '#fff',
     borderColor: 'white !important',
     fontSize: '12px',
-
+    marginBottom: '13px',
       '&:hover' : {
         backgroundColor: 'white',
         color: 'black',
@@ -34,7 +40,8 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     color: '#cdcfd2',
     fontSize: '13.5px',
-    cursor: 'pointer',  
+    cursor: 'pointer',
+    display: 'inline-block',  
 
       '&:hover' : {
       textdecoration: 'underline',
@@ -46,8 +53,8 @@ const styles = theme => ({
   },
   title: {
     display: 'flex',
-    marginLeft: '20rem',
-    marginRight: '20rem',
+    flexDirection:"row",
+    marginLeft: "20rem",
     [theme.breakpoints.up('md')]: {
       left: '0',
       right: '0',
@@ -85,12 +92,14 @@ class Linkedin extends React.Component {
     
     return (
       <div className={classes.root}>
-          <AppBar position="static" color="primary" className={classes.navbar}>
+          <AppBar position="static" color="primary" className={classes.navbar + ' test'}>
             <Toolbar>
-              <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-                <img src={Logo} />
-              </Typography>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={6}>
+                <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+                  <img src={Logo} />
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
                 <FormControl className={classes.margin}>
                   <InputBase
                     id="bootstrap-input"
@@ -119,14 +128,10 @@ class Linkedin extends React.Component {
                 <Typography className={classes.subheading} variant="subheading" noWrap>
                     Forgot Password?
                 </Typography>
-                
-                <div className={classes.grow} />
-                    <div className={classes.sectionDesktop}>    
-                        <div className={classes.sectionMobile}></div>
-                  </div>
-              </Grid>
+                </Grid>
             </Toolbar>
           </AppBar>
+          <Main />
       </div>
     );
   }
