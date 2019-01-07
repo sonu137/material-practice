@@ -6,9 +6,9 @@ import Navbar from '../../styles/navbar.scss';
 class Signup extends React.Component{
     render(){
         return (
-            <div>
+            <div className='peoples-image'>
                 <Card />
-                <img src={Peoples} className='peoples-image'/> 
+                <img src={Peoples}/> 
             </div>   
           );
     }

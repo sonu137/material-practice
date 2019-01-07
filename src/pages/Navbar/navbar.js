@@ -11,11 +11,12 @@ import Button from '@material-ui/core/Button';
 import Logo from '../../assets/image/linkedin.png';
 import Navbar from '../../styles/navbar.scss';
 import Main from '../main-page/backdrop-image';
+import Footer from '../footer/footer';
 const styles = theme => ({
   navbar : {
     backgroundColor: '#283e4a',
     position: 'fixed',
-    minWidth:'1096px',
+    minWidth:'1200px',
 
     [theme.breakpoints.up('xs')]: {
       width:'100%',
@@ -128,10 +129,11 @@ class Linkedin extends React.Component {
                 <Typography className={classes.subheading} variant="subheading" noWrap>
                     Forgot Password?
                 </Typography>
-                </Grid>
+              </Grid>
             </Toolbar>
           </AppBar>
-          <Main />
+        <Main />
+        <Footer />
       </div>
     );
   }
