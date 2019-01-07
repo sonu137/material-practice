@@ -2,20 +2,19 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: lightcyan;
+    background-color: #434649;
+    min-width: 1200px;
 }
 .peoples-image{
     min-width: 1128px;
     width: 100%;
     height: 1%;
-    background-size: cover;
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
     overflow: hidden;
-    background-image: url(../assets/image/peoples.jpg);
-    padding: 24px 12px;
+    background-image: url(../assets/image/peoples.jpg) no-repeat ;
+    padding: 60px 0;
 }
 
 .sonu{
