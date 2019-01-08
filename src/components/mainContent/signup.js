@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import InputLabel from '@material-ui/core/InputLabel';
 import { InputBase } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
-import Navbar from '../../styles/navbar.scss';
+import Navbar from '../../styles/styles.scss';
 import Themes from '../../theme.js';
 
 const styles =theme =>({
@@ -44,7 +44,7 @@ const styles =theme =>({
       marginTop: '5rem',
     },
   },
-  Content: {
+  content: {
     margin: '0',
     padding: '0',
     marginTop: '1rem',
@@ -107,14 +107,11 @@ const styles =theme =>({
   },
 });
 
-
 function SimpleCard(props) {
   const { classes } = props;
-
-
   return (
     <Card className={classes.card}>
-            <CardContent className={classes.Content}>
+            <CardContent className={classes.content}>
                 {/* <div className={classes.header}> */}
                     <Typography className={classes.title} color="textSecondary" variant="title" gutterBottom>
                     Be great at what you do
@@ -178,7 +175,6 @@ function SimpleCard(props) {
                     </Button>
                 </div>
       </CardContent>
-      
     </Card>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import Peoples from '../../assets/image/peoples.jpg';
-import Card from './card';
-import Navbar from '../../styles/navbar.scss';
+import Peoples from '../../images/jpg/peoples.jpg';
+import Card from './signup';
+import Navbar from '../../styles/styles.scss';
 
 class Signup extends React.Component{
     render(){

@@ -8,10 +8,8 @@ import { withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import Logo from '../../assets/image/linkedin.png';
-import Navbar from '../../styles/navbar.scss';
-import Main from '../main-page/backdrop-image';
-import Footer from '../footer/footer';
+import Logo from '../images/svg/linkedin.png';
+import Navbar from '../styles/styles.scss';
 const styles = theme => ({
   navbar : {
     backgroundColor: '#283e4a',
@@ -132,8 +130,6 @@ class Linkedin extends React.Component {
               </Grid>
             </Toolbar>
           </AppBar>
-        <Main />
-        <Footer />
       </div>
     );
   }

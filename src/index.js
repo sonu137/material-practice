@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LinkedIn from './pages/Navbar/navbar';
+import LinkedIn from './main';
 import * as serviceWorker from './serviceWorker';
 // import {MuiThemeProvider } from '@material-ui/core/styles'
 // import theme from './theme'
