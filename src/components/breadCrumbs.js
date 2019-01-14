@@ -6,18 +6,21 @@ import { Typography, Grid } from '@material-ui/core';
 class BreadCrumb extends React.Component {
     render() {
 		const {classes, data, title} = this.props;
-		console.log(title)
+
 		return (
-			<div className={classes.wrapper}>
+			<div className={classes.breadCrumbWrapper}>
 				<Typography variant='title' color='primary' className={classes.breadCrumbTitle}>
 					{title}
 				</Typography>
+
 				<ul className={classes.breadCrumb}>
-					{data.map((link, index) => (
-						<li key={index} className={classes.breadCrumbList} >
-							<a href={link.href}>{link.text}</a>
-						</li>
-					))}
+					{
+						data.map((link, index) => (
+							<li key={index} className={classes.breadCrumbList} >
+								<a href={link.href}>{link.text}</a>
+							</li>
+						))
+					}
 				</ul>
 			</div>
 		)
