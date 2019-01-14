@@ -6,10 +6,7 @@ import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
-import Navbar from '../../styles/navbar.scss';
-import BrowseFooter from '../browse footer/browse';
-import CompanyFooter from './company-footer';
-import { Typography } from '@material-ui/core';
+import Navbar from '../../styles/styles.scss';
 
 const styles = theme =>({
     root: {
@@ -24,24 +21,24 @@ const styles = theme =>({
         margin: '0',
         display: 'inline-block',
       },
-      bootstrapInput: {
+    bootstrapInput: {
         border: '1px solid grey',
         padding: '5px',
         backgroundColor: 'white',
         borderRadius: '2px',
-      },
-      labelInput: {
+    },
+    labelInput: {
         padding: '5px',
         color: '#fff',
-      },
+    },
     button: {
-         color: '#abb0b5 !important',
-         fontSize: '12px',
-         border: '1px solid #abb0b5',
-         borderRadius: '2px',
-         backgroundColor: 'transparent',
-         minHeight: '32px !important',
-         marginLeft: '5px !important',
+        color: '#abb0b5 !important',
+        fontSize: '12px',
+        border: '1px solid #abb0b5',
+        borderRadius: '2px',
+        backgroundColor: 'transparent',
+        minHeight: '32px !important',
+        marginLeft: '5px !important',
     },
     link: {
         color: 'white',
@@ -57,7 +54,7 @@ const styles = theme =>({
             fontWeight: 'bolder',
         },
     },
-    Divider: {
+    divider: {
         display: 'flex',
         justifyContent: 'center',
         backgroundColor: '#797c7f',
@@ -65,7 +62,7 @@ const styles = theme =>({
     }
   });
 
-class Footer extends React.Component{
+class userSearch extends React.Component{
     state = {
         value: 0,
       };
@@ -139,16 +136,14 @@ class Footer extends React.Component{
                     </ol>
                     <label className={classes.margin}><a href="#" className={classes.directories}>Browse by country/region</a></label>
                 </div>
-                <Divider variant="middle" color="primary" className={classes.Divider}/>
-                <BrowseFooter />
-                <CompanyFooter />
+                <Divider variant="middle" color="primary" className={classes.divider}/>
             </Fragment>   
 
         );
     }
 }
 
-Footer.propTypes = {
+userSearch.propTypes = {
     classes: PropTypes.object.isRequired,
   };
-  export default withStyles(styles)(Footer);
+  export default withStyles(styles)(userSearch);
