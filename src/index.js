@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './components/button';
+import Linkedin from './main';
 import * as serviceWorker from './serviceWorker';
 // import {MuiThemeProvider } from '@material-ui/core/styles'
 // import theme from './theme'
 
 // ReactDOM.render(<MuiThemeProvider theme={theme}><SimpleModal /></MuiThemeProvider>, document.getElementById('root'));
 ReactDOM.render(
-    <Button 
-        danger
-        size = 'lg'
-    /> , 
+    <Linkedin
+    />, 
     document.getElementById('root')
 );
 
