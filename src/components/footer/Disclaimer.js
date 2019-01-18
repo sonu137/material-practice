@@ -2,33 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 
-const styles = themes => ({
-  root: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    color: 'white',
-    margin: '15px 0',
-
-  },
-
-  link: {
-      color: 'white',
-      display: 'flex',
-      listStyle: 'none',
-      margin: '0',
-  }, 
-  directories: {
-    color: 'white',
-    margin: '0 10px',
-    textDecoration: 'none',
-    fontSize: '14px',
-    '&:hover': {
-        fontWeight: 'bold',
-        textDecoration: 'underline',
-    },
-  },
-});
+import DisclaimerStyles from '../../styles/Disclaimer.styles'
 
 function CompanyFooter(props) {
   const {classes, data} = props;
@@ -50,4 +24,4 @@ function CompanyFooter(props) {
     classes: PropTypes.object.isRequired,
   };
 
-  export default withStyles(styles)(CompanyFooter);
+  export default withStyles(DisclaimerStyles)(CompanyFooter);

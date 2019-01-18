@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+
 import { withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import InputBase from '@material-ui/core/InputBase';
@@ -7,71 +8,18 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Navbar from '../../styles/styles.scss';
+import SearchPanelStyles from '../../styles/SearchPanel.styles'
 
-const styles = theme =>({
-    root: {
-      width: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-      color: 'white',
-      marginTop: '15px',
-
-    },
-    margin: {
-        margin: '0',
-        display: 'inline-block',
-      },
-    bootstrapInput: {
-        border: '1px solid grey',
-        padding: '5px',
-        backgroundColor: 'white',
-        borderRadius: '2px',
-    },
-    labelInput: {
-        padding: '5px',
-        color: '#fff',
-    },
-    button: {
-        color: '#abb0b5 !important',
-        fontSize: '12px',
-        border: '1px solid #abb0b5',
-        borderRadius: '2px',
-        backgroundColor: 'transparent',
-        minHeight: '32px !important',
-        marginLeft: '5px !important',
-    },
-    link: {
-        color: 'white',
-        display: 'flex',
-        listStyle: 'none',
-        margin: '0',
-    },
-    directories: {
-        color: 'white',
-        marginRight: '10px',
-        textDecoration: 'none',
-        '&:hover': {
-            fontWeight: 'bolder',
-        },
-    },
-    divider: {
-        display: 'flex',
-        justifyContent: 'center',
-        backgroundColor: '#797c7f',
-        marginTop: '20px',
-    }
-  });
-
-class userSearch extends React.Component{
+class userSearch extends React.Component {
     state = {
         value: 0,
       };
-    
+
       handleChange = (event, value) => {
         this.setState({ value });
       };
-      
-    render(){
+ 
+    render() {
         const { classes } = this.props;
         const { value } = this.state;
 
@@ -103,6 +51,7 @@ class userSearch extends React.Component{
                             </Button>
                         </FormControl>
                 </div>
+
                 <div className={classes.root}>
                     <label className={classes.margin}>LinkedIn member directory:</label>
                     <ol className={classes.link}>
@@ -146,4 +95,4 @@ class userSearch extends React.Component{
 userSearch.propTypes = {
     classes: PropTypes.object.isRequired,
   };
-  export default withStyles(styles)(userSearch);
+  export default withStyles(SearchPanelStyles)(userSearch);

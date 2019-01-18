@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react'
 import Navbar from '../src/components/navbar'
-import BackdropImage from '../src/components/mainContent/backdrop-image'
-import UserSearch from './components/footer/userSearch'
-import HelperMenu from '../src/components/footer/helperMenu'
+import BackdropImage from '../src/components/mainContent/BackdropImage'
+import SearchPanel from './components/footer/SearchPanel'
 import Disclaimer from '../src/components/footer/Disclaimer'
 import BreadCrumbs from './components/breadCrumbs'
-import {Grid} from '@material-ui/core';
+import {Grid, Divider} from '@material-ui/core';
 
 
 const GeneralData = [
@@ -183,10 +182,7 @@ class Index extends React.Component {
             <Fragment>
                 <Navbar />
                 <BackdropImage />
-                <UserSearch />
-                <HelperMenu />
-                <Disclaimer data ={FooterDisclaimer} />
-                
+                <SearchPanel />
                 <Grid container spacing={16}>
                     <Grid item xs={6} >
                         <BreadCrumbs title='General' data={GeneralData}/>
@@ -204,6 +200,17 @@ class Index extends React.Component {
                         <BreadCrumbs title='Browse Directories' data={BrowseDirectories}/>
                     </Grid>
                 </Grid>
+                <Divider 
+                    variant="middle" 
+                    color="primary"
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        backgroundColor: '#797c7f', 
+                        marginTop: '20px'
+                    }}
+                    />
+                <Disclaimer data ={FooterDisclaimer} />
 
             </Fragment>
         )

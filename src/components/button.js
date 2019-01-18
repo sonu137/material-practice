@@ -1,89 +1,57 @@
 import React from 'react'
+import Propstypes from 'prop-types'
+
 import {withStyles} from '@material-ui/core/styles'
+import classNames from 'classnames'
 
-const styles = {
-    button: {
-        padding: 10,
-        backgroundColor: '#f2f2f0',
-        color: '#000',
-        borderRadius: 5,
-        border: '1px solid #fff',
-        fontSize: 15,
-        cursor: 'pointer'
-    },
-
-    primary: {
-        backgroundColor: '#007bff',
-        color: '#fff'
-    },
-
-    secondary: {
-        backgroundColor: '#6c757d',
-        color: '#fff',
-    },
-
-    success: {
-        backgroundColor: '#1e7e34',
-        color: '#fff',
-    },
-
-    danger: {
-        backgroundColor: '#dc3545',
-        color: '#fff',
-    },
-
-    warning: {
-        backgroundColor: '#ffc107',
-        color: '#212529',
-    },
-
-    info: {
-        backgroundColor: '#17a2b8',
-        color: '#fff',
-    },
-
-    sm: {
-        fontSize: 10,
-        padding: 6,
-    },
-
-    lg: {
-        fontSize: 20,
-        padding: 20,
-    }
-};
+import buttonStyles from '../styles/button'
 
 class RegularButton extends React.Component {
     render() {
         const {
-            classes,
-            primary,
-            secondary,
-            success,
-            warning,
-            info,
-            danger,
-            size,
-        } = this.props;
+            classes, // defines props for classes attribute
+            color, // defines stores color in styles
+            size, // defines stored size 
+            className = '', // it defines the class name and it can be sent to the user as empty string instead of undefined
+            ...rest // stores anonymous props from the user
+        } = this.props
 
-        console.log('this.props', this.props)
+        const buttonClasses = classNames({
+            [classes.button]: true, // it takes the button class
+            [classes[size]]: size, // the value of size stores in size eg.sm or lg
+            [classes[color]]: color, // the value of color stores in color value eg.primary,secondry etc.
+            [className]: true // its independent.
+        })
 
         return (
             <button
-                className={`
-                    ${classes.button}
-                    ${size === 'sm' ? classes.sm : size === 'lg' ? classes.lg : ''}
-                    ${primary  ? classes.primary : ''}
-                    ${secondary  ? classes.secondary : ''}
-                    ${success  ? classes.success : ''}
-                    ${warning  ? classes.warning : ''}
-                    ${info  ? classes.info : ''}
-                    ${danger  ? classes.danger : ''}
-                `}
+                className={buttonClasses}
+                {...rest}
             >
                 Button
             </button>
         );
     }
 }
-export default withStyles(styles)(RegularButton);
+
+RegularButton.Propstypes = {
+    classes: Propstypes.object.required,
+    color: Propstypes.oneOf([ // defined required props to use in the available colors.
+        'primary',
+        'secondary',
+        'success',
+        'danger',
+        'warning',
+        'info',
+        false
+    ]),
+    className: Propstypes.string,
+    size: Propstypes.oneOf([ // defines the available size.
+        'sm',
+        'lg',
+        false
+    ]),
+}
+
+
+export default withStyles(buttonStyles)(RegularButton);
