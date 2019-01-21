@@ -1,6 +1,7 @@
 import React from 'react';
+
 import Peoples from '../../images/jpg/peoples.jpg';
-import Card from './signup';
+import Card from './wrapperSignup';
 import Navbar from '../../styles/styles.scss';
 
 class Signup extends React.Component {

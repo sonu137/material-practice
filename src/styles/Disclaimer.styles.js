@@ -13,12 +13,13 @@ export default {
       display: 'flex',
       listStyle: 'none',
       margin: '0',
-  }, 
+  },
+   
   directories: {
     color: 'white',
     margin: '0 10px',
     textDecoration: 'none',
-    fontSize: '14px',
+    fontSize: 10,
     '&:hover': {
         fontWeight: 'bold',
         textDecoration: 'underline',
