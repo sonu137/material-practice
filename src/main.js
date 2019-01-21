@@ -1,219 +1,58 @@
 import React, { Fragment } from 'react'
+import {withStyles} from '@material-ui/core/styles'
+import {Grid, Divider} from '@material-ui/core';
+// Imported files
 import Navbar from '../src/components/navbar'
-import BackdropImage from '../src/components/mainContent/BackdropImage'
+import BackdropImage from '../src/components/mainContent/backdropImage'
 import SearchPanel from './components/footer/SearchPanel'
 import Disclaimer from '../src/components/footer/Disclaimer'
 import BreadCrumbs from './components/breadCrumbs'
-import {Grid, Divider} from '@material-ui/core';
+import MainStyle from './styles/main.style'
 
-
-const GeneralData = [
-
-    {
-        text: 'Sign Up',
-        link: '#'
-    },
-
-    {
-        text: 'Help Center',
-        link: '#'
-    },
-
-    {
-        text: 'About',
-        link: '#'
-    },
-
-    {
-        text: 'Press',
-        link: '#'
-    },
-
-    {
-        text: 'Blog',
-        link: '#'
-    },
-
-    {
-        text: 'Careers',
-        link: '#'
-    },
-
-    {
-        text: 'Developers',
-        link: '#'
-    },
-]
-
-const BusinessSolutions = [
-
-    {
-        text: 'Talent',
-        link: '#'
-    },
-
-    {
-        text: 'Marketing',
-        link: '#'
-    },
-
-    {
-        text: 'Sales',
-        link: '#'
-    },
-
-    {
-        text: 'Learning',
-        link: '#'
-    },
-
-    {
-        text: 'Company Pages',
-        link: '#'
-    },
-
-]
-
-const BrowseLinkedin = [
-
-    {
-        text: 'Learning',
-        link: '#'
-    },
-
-    {
-        text: 'Jobs',
-        link: '#'
-    },
-
-    {
-        text: 'Mobile',
-        link: '#'
-    },
-
-    {
-        text: 'ProFinder',
-        link: '#'
-    },
-
-]
-
-const BrowseDirectories = [
-
-    {
-        text: 'Members',
-        link: '#'
-    },
-
-    {
-        text: 'Jobs',
-        link: '#'
-    },
-
-    {
-        text: 'Companies',
-        link: '#'
-    },
-
-    {
-        text: 'Salaries',
-        link: '#'
-    },
-
-    {
-        text: 'Universities',
-        link: '#'
-    },
-
-    {
-        text: 'Top Jobs',
-        link: '#'
-    },
-
-]
-
-const FooterDisclaimer = [
-
-    {
-        text: 'Linkedin © 2019',
-        link: '#'
-    },
-
-    {
-        text: 'User Agreement',
-        link: '#'
-    },
-
-    {
-        text: 'Privacy Policy',
-        link: '#'
-    },
-
-    {
-        text: 'Community Guidelines',
-        link: '#'
-    },
-
-    {
-        text: 'Cookie Policy',
-        link: '#'
-    },
-
-    {
-        text: 'Copyright Policy',
-        link: '#'
-    },
-
-    {
-        text: 'Guest Controls',
-        link: '#'
-    },
-
-    {
-        text: 'Language',
-        link: '#'
-    },
-
-]
-
+import {GeneralData, BrowseLinkedin, BusinessSolutions, BrowseDirectories, FooterDisclaimer} from './datas/footerWrapperData'
+import {MembersDirectory} from './datas/membersBreadCrumbData'
 class Index extends React.Component { 
     render() {
+        const {classes} = this.props
         return (
             <Fragment>
                 <Navbar />
                 <BackdropImage />
-                <SearchPanel />
-                <Grid container spacing={16}>
-                    <Grid item xs={6} >
-                        <BreadCrumbs title='General' data={GeneralData}/>
+                <div className={classes.WrapperPadding}>
+                    <SearchPanel data={MembersDirectory} />
+                    <Grid container spacing={16}>
+                        <Grid item xs={6} className={classes.footerWrapper}>
+                            <BreadCrumbs title='General' data={GeneralData}/>
+                        </Grid>
+
+                        <Grid item xs={6} className={classes.footerWrapper}>
+                            <BreadCrumbs title='Browse Linkedin' data={BrowseLinkedin}/>
+                        </Grid>
+
+                        <Grid item xs={6} className={classes.footerWrapper}>
+                            <BreadCrumbs title='Business Solution' data={BusinessSolutions}/>
+                        </Grid>
+
+                        <Grid item xs={6} className={classes.footerWrapper}>
+                            <BreadCrumbs title='Browse Directories' data={BrowseDirectories}/>
+                        </Grid>
                     </Grid>
 
-                    <Grid item xs={6} >
-                        <BreadCrumbs title='Browse Linkedin' data={BrowseLinkedin}/>
-                    </Grid>
-
-                    <Grid item xs={6}>
-                        <BreadCrumbs title='Business Solution' data={BusinessSolutions}/>
-                    </Grid>
-
-                    <Grid item xs={6}>
-                        <BreadCrumbs title='Browse Directories' data={BrowseDirectories}/>
-                    </Grid>
-                </Grid>
-                <Divider 
-                    variant="middle" 
-                    color="primary"
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        backgroundColor: '#797c7f', 
-                        marginTop: '20px'
-                    }}
+                    <Divider 
+                        variant='middle' 
+                        color='primary'
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            backgroundColor: '#797c7f', 
+                            marginTop: '20px'
+                        }}
                     />
-                <Disclaimer data ={FooterDisclaimer} />
 
+                    <Disclaimer data ={FooterDisclaimer} />
+                </div>
             </Fragment>
         )
     }
 }
-export default Index
+export default withStyles(MainStyle)(Index);

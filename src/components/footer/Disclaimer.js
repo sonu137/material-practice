@@ -25,3 +25,4 @@ function CompanyFooter(props) {
   };
 
   export default withStyles(DisclaimerStyles)(CompanyFooter);
+  

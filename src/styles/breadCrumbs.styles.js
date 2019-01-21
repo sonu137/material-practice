@@ -1,7 +1,8 @@
-export default{
+export default {
     breadCrumbWrapper: {
         display: 'flex',
         margin: 0,
+        padding: '0 20px'
     },
 
     breadCrumb: {
@@ -12,6 +13,8 @@ export default{
 
     breadCrumbList: {
         borderRight: '1px solid #fff',
+        margin: '10px 0 0',
+        padding: 0,
 
         '&:last-child': {
             borderRight: 0
@@ -25,8 +28,8 @@ export default{
     },
 
     breadCrumbTitle: {
-        fontSize: 15,
-        margin: '5px 20px 0',
+        fontSize: 11,
+        margin: '10px 0',
         color: 'white',
     },
 }

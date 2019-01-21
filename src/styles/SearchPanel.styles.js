@@ -40,6 +40,7 @@ export default {
         color: 'white',
         marginRight: '10px',
         textDecoration: 'none',
+        cursor: 'pointer',
         '&:hover': {
             fontWeight: 'bolder',
         },
