@@ -3,7 +3,7 @@ export default (theme) => ({
       backgroundColor: '#283e4a',
       position: 'fixed',
       minWidth: '1200px',
-  
+
       [theme.breakpoints.up('xs')]: {
         width: '100%',
       },
@@ -12,32 +12,40 @@ export default (theme) => ({
         minWidth: '1096px',
       },
     },
+
     button: {
-      padding: '6px 15px',
+      padding: '8px 15px',
       color: '#fff',
-      borderColor: 'white !important',
+      borderColor: 'black !important',
+      borderRadius: 5,
       fontSize: '12px',
       marginBottom: '13px',
+      backgroundColor: '#283e4a',
+      display: 'inlineBlock',
+      cursor: 'pointer',
         '&:hover': {
           backgroundColor: 'white',
           color: 'black',
         },
     },
+
     subheading:{
-      margin: theme.spacing.unit,
+      margin: 25,
       color: '#cdcfd2',
-      fontSize: '13.5px',
+      fontSize: 15,
       cursor: 'pointer',
       display: 'inline-block',  
-  
+
         '&:hover': {
         textdecoration: 'underline',
         color: 'white',
       },
     },
+
     input: {
       display: 'none',
     },
+
     title: {
       display: 'flex',
       flexDirection: 'row',
@@ -47,9 +55,11 @@ export default (theme) => ({
         right: '0',
       },
     },
+
     margin: {
       margin: theme.spacing.unit,
     },
+
     bootstrapInput: {
       display: 'flex',
       borderRadius: 2,
@@ -63,7 +73,8 @@ export default (theme) => ({
         boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
       },
     },
+
     bootstrapFormLabel: {
       fontSize: 15,
     },
-  });
+  })

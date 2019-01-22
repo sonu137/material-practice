@@ -4,19 +4,14 @@ import PropTypes from 'prop-types'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import InputBase from '@material-ui/core/InputBase'
-
 import {withStyles} from '@material-ui/core/styles'
-
 import FormControl from '@material-ui/core/FormControl'
 import Grid from '@material-ui/core/Grid'
-import Button from '@material-ui/core/Button'
 
 import Logo from '../images/svg/linkedin.png'
-
-import Navbar from '../styles/styles.scss'
 import NavbarStyle from '../styles/navbar.style'
 
+import CustomTextField from './CustomTextField'
 class Linkedin extends React.Component {
   state = {
     anchorEl: null,
@@ -24,7 +19,7 @@ class Linkedin extends React.Component {
   }
 
   render() {
-    const {classes} = this.props;
+    const {classes} = this.props
 
     return (
       <div className={classes.root}>
@@ -32,43 +27,38 @@ class Linkedin extends React.Component {
             <Toolbar>
               <Grid item xs={6}>
                 <Typography className={classes.title} variant='h6' color='inherit' noWrap>
-                  <img src={Logo} />
+                  <img src={Logo} alt='Company Logo' />
                 </Typography>
               </Grid>
+
               <Grid item xs={6}>
                 <FormControl className={classes.margin}>
-                  <InputBase
-                    id='bootstrap-input'
-                    type='Email'
-                    placeholder='Email'
-                    classes={{
-                    root: classes.bootstrapRoot,
-                    input: classes.bootstrapInput,
-                    }}
-                  />
+                <CustomTextField
+                  placeholder='First Name'
+                  handleChange={() => {}}
+                />
                 </FormControl>
+
                 <FormControl className={classes.margin}>
-                    <InputBase
-                      id='bootstrap-input'
-                      type='password'
-                      placeholder='Password'
-                      classes={{
-                      root: classes.bootstrapRoot,
-                      input: classes.bootstrapInput,
-                      }}
-                    />
+                <CustomTextField
+                  placeholder='Last Name'
+                  type='password'
+                  handleChange={() => {}}
+                />
                 </FormControl>
-                <Button variant='outlined' className={classes.button}>
+
+                <button variant='outlined' className={classes.button}>
                   Sign in
-                </Button>
-                <Typography className={classes.subheading} variant='subheading' noWrap>
+                </button>
+
+                <label className={classes.subheading} variant='subtitle2' noWrap>
                     Forgot Password?
-                </Typography>
+                </label>
               </Grid>
             </Toolbar>
           </AppBar>
       </div>
-    );
+    )
   }
 }
 
@@ -76,4 +66,4 @@ Linkedin.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(NavbarStyle)(Linkedin);
+export default withStyles(NavbarStyle)(Linkedin)

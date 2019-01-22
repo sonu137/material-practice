@@ -5,21 +5,14 @@ body{
     background-color: #434649;
     min-width: 1320px;
 }
+
 .peoples-image{
-    min-width: 1128px;
+    min-width: 1380px;
     width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background-image: url(../images/jpg/peoples.jpg) no-repeat ;
     padding: 50px 0 10px;
     pointer-events: none;
-}
-
-.sonu{
-    border: 2px solid black;
-}
-.Button{
-    border: 1px solid grey;
 }
