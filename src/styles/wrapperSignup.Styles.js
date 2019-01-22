@@ -16,15 +16,15 @@ export default (theme) => ({
       transform: 'translateX(50%)',
 
       [theme.breakpoints.up('xs')]: {
-        width:'300px',
+        width: '300px',
         marginTop: '5rem',
       },
       [theme.breakpoints.up('sm')]: {
-        width:'300px',
+        width: '300px',
         marginTop: '5rem',
       },
       [theme.breakpoints.up('lg')]: {
-        width:'400px',
+        width: '400px',
         marginTop: '5rem',
       },
     },
@@ -79,9 +79,12 @@ export default (theme) => ({
       border: '1px solid grey',
       marginBottom: '10px',
       backgroundColor: 'white',
+      '&:InputBase':{
+        marginLeft: 10,
+      }
     },
 
-    policy:{
+    policy: {
       fontSize: '11.5px',
       color: 'black',
       marginBottom: '1rem',

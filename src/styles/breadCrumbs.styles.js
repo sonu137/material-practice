@@ -2,7 +2,7 @@ export default {
     breadCrumbWrapper: {
         display: 'flex',
         margin: 0,
-        padding: '0 20px'
+        padding: '0 20px',
     },
 
     breadCrumb: {
@@ -15,6 +15,7 @@ export default {
         borderRight: '1px solid #fff',
         margin: '10px 0 0',
         padding: 0,
+        cursor: 'pointer',
 
         '&:last-child': {
             borderRight: 0
